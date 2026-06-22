@@ -1,0 +1,2874 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<meta content="iPro — магазины оригинальной техники в Казани, Нижнекамске и Елабуге. iPhone, iPad, MacBook, AirPods, Apple Watch, Dyson, PlayStation 5, Ray-Ban, аксессуары. Гарантия 1 год." name="description"/>
+<title>iPro Татарстан — оригинальная техника Apple, Dyson, PlayStation, Ray-Ban</title>
+<style>
+    :root {
+      --bg: #050505;
+      --bg-soft: #0b0d11;
+      --card: #111318;
+      --card-2: #151923;
+      --text: #ffffff;
+      --muted: #a8b0bd;
+      --muted-2: #707987;
+      --blue: #007AFF;
+      --blue-soft: rgba(0, 122, 255, 0.16);
+      --line: rgba(255, 255, 255, 0.09);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --max: 1180px;
+      --side: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 15% 5%, rgba(0, 122, 255, 0.22), transparent 34%),
+        radial-gradient(circle at 90% 10%, rgba(0, 122, 255, 0.10), transparent 32%),
+        linear-gradient(180deg, #050505 0%, #080a0e 46%, #050505 100%);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button {
+      font: inherit;
+      color: inherit;
+      border: 0;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .page {
+      width: min(100% - calc(var(--side) * 2), var(--max));
+      margin: 0 auto;
+    }
+
+
+    .premium-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+      background-size: 54px 54px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.95), rgba(0,0,0,0.34) 58%, rgba(0,0,0,0.8));
+      -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.95), rgba(0,0,0,0.34) 58%, rgba(0,0,0,0.8));
+    }
+
+    .premium-orb {
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 999px;
+      filter: blur(54px);
+      opacity: 0.34;
+      animation: orbMove 12s ease-in-out infinite alternate;
+    }
+
+    .orb-one {
+      left: -120px;
+      top: 120px;
+      background: rgba(0, 122, 255, 0.55);
+    }
+
+    .orb-two {
+      right: -150px;
+      top: 520px;
+      background: rgba(80, 170, 255, 0.28);
+      animation-delay: -4s;
+    }
+
+    .orb-three {
+      left: 42%;
+      bottom: 12%;
+      width: 320px;
+      height: 320px;
+      background: rgba(255, 255, 255, 0.10);
+      animation-delay: -7s;
+    }
+
+    .lux-line {
+      width: min(100% - calc(var(--side) * 2), var(--max));
+      height: 1px;
+      margin: 0 auto;
+      background: linear-gradient(90deg, transparent, rgba(0,122,255,0.75), rgba(255,255,255,0.42), rgba(0,122,255,0.75), transparent);
+      box-shadow: 0 0 28px rgba(0,122,255,0.28);
+    }
+
+    .selection-strip {
+      margin-top: -34px;
+      padding-bottom: 54px;
+    }
+
+    .selection-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      padding: 16px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.28);
+    }
+
+    .selection-item {
+      position: relative;
+      overflow: hidden;
+      padding: 20px;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(0,122,255,0.20), transparent 36%),
+        rgba(10, 13, 19, 0.78);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .selection-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 0 42%, rgba(255,255,255,0.07) 50%, transparent 58% 100%);
+      transform: translateX(-120%);
+      transition: transform 0.65s ease;
+    }
+
+    .selection-item:hover::after {
+      transform: translateX(120%);
+    }
+
+    .selection-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      background: linear-gradient(135deg, var(--blue), #65b5ff);
+      color: #fff;
+      font-weight: 800;
+      box-shadow: 0 14px 32px rgba(0,122,255,0.25);
+    }
+
+    .selection-item strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 5px;
+      letter-spacing: -0.025em;
+    }
+
+    .selection-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .product-card,
+    .store-card,
+    .review-card,
+    .notice,
+    .extra-info-wrap {
+      position: relative;
+    }
+
+    .product-card::before,
+    .store-card::before,
+    .review-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(0,122,255,0.42), transparent 28%, rgba(255,255,255,0.12) 64%, transparent);
+      -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .product-card:hover::before,
+    .store-card:hover::before,
+    .review-card:hover::before {
+      opacity: 1;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(0,122,255,0.13);
+      border: 1px solid rgba(0,122,255,0.25);
+      color: #cfe6ff;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .section-kicker::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--blue);
+      box-shadow: 0 0 0 6px rgba(0,122,255,0.12);
+    }
+
+    .floating-contact {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 70;
+      display: flex;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 999px;
+      background: rgba(8, 11, 17, 0.74);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.34);
+    }
+
+    .floating-contact a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.055);
+      color: #fff;
+      font-size: 14px;
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .floating-contact a:first-child {
+      background: var(--blue);
+    }
+
+    .floating-contact a:hover {
+      transform: translateY(-2px);
+      background: rgba(0,122,255,0.9);
+    }
+
+    @keyframes orbMove {
+      from { transform: translate3d(0, 0, 0) scale(1); }
+      to { transform: translate3d(34px, -28px, 0) scale(1.08); }
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      background: rgba(5, 5, 5, 0.76);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      width: min(100% - calc(var(--side) * 2), var(--max));
+      margin: 0 auto;
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.06em;
+      flex: 0 0 auto;
+    }
+
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--blue), #5ab0ff);
+      box-shadow: 0 12px 35px rgba(0, 122, 255, 0.34);
+      font-size: 21px;
+      letter-spacing: -0.07em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .nav-links a {
+      transition: color 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      min-height: auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 32px;
+      align-items: center;
+      padding: 74px 0 64px;
+    }
+
+    .hero-content,
+    .hero-panel,
+    section,
+    .product-card,
+    .store-card,
+    .review-card,
+    .notice {
+      animation: fadeUp 0.65s ease both;
+    }
+
+    .hero-content {
+      max-width: 880px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 14px;
+      border: 1px solid rgba(0, 122, 255, 0.35);
+      background: var(--blue-soft);
+      color: #cfe6ff;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--blue);
+      box-shadow: 0 0 0 7px rgba(0, 122, 255, 0.13);
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 86px);
+      line-height: 0.95;
+      letter-spacing: -0.075em;
+      margin-bottom: 24px;
+      max-width: 850px;
+    }
+
+    .blue {
+      color: var(--blue);
+    }
+
+    .hero-text {
+      max-width: 640px;
+      color: var(--muted);
+      font-size: clamp(17px, 2.1vw, 21px);
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      user-select: none;
+      touch-action: manipulation;
+      text-align: center;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: var(--card-2);
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+      box-shadow: 0 16px 42px rgba(0, 122, 255, 0.28);
+    }
+
+    .btn-primary:hover {
+      background: #1688ff;
+      box-shadow: 0 20px 50px rgba(0, 122, 255, 0.36);
+    }
+
+    .hero-facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 690px;
+    }
+
+    .fact {
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--line);
+    }
+
+    .fact strong {
+      display: block;
+      font-size: 21px;
+      margin-bottom: 4px;
+    }
+
+    .fact span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero-panel {
+      position: relative;
+      min-height: 500px;
+      border-radius: 34px;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.035)),
+        radial-gradient(circle at 30% 20%, rgba(0, 122, 255, 0.35), transparent 38%),
+        #0b0d11;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        linear-gradient(115deg, transparent 0 42%, rgba(255, 255, 255, 0.16) 46%, transparent 50% 100%);
+      transform: rotate(10deg);
+      animation: shine 6s ease-in-out infinite;
+    }
+
+    .device-card {
+      position: absolute;
+      inset: auto 34px 34px 34px;
+      padding: 24px;
+      border-radius: 28px;
+      background: rgba(5, 5, 5, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .device-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .device-pill {
+      min-height: 82px;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid var(--line);
+    }
+
+    .device-pill b {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .device-pill span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .floating {
+      position: absolute;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
+    }
+
+    .float-1 {
+      width: 148px;
+      height: 210px;
+      left: 38px;
+      top: 42px;
+      background:
+        linear-gradient(180deg, rgba(0, 122, 255, 0.18), rgba(255, 255, 255, 0.05)),
+        rgba(255, 255, 255, 0.08);
+    }
+
+    .float-1::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 16px;
+      width: 48px;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.35);
+      transform: translateX(-50%);
+    }
+
+    .float-2 {
+      width: 205px;
+      height: 132px;
+      right: 36px;
+      top: 110px;
+    }
+
+    .float-2::after {
+      content: "";
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(0, 122, 255, 0.8);
+      box-shadow: 0 0 28px rgba(0, 122, 255, 0.58);
+    }
+
+    .float-3 {
+      width: 120px;
+      height: 120px;
+      right: 88px;
+      top: 286px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: #dcecff;
+    }
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4.5vw, 54px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 560px;
+      font-size: 17px;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 26px;
+    }
+
+    .filter-btn {
+      padding: 11px 15px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      transition: transform 0.25s ease, color 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+      touch-action: manipulation;
+      white-space: nowrap;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      color: #fff;
+      background: var(--blue);
+      border-color: var(--blue);
+      transform: translateY(-2px);
+    }
+
+
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 26px;
+      height: 26px;
+      padding: 0 7px;
+      border-radius: 999px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.13), rgba(255,255,255,0.045)),
+        rgba(0, 122, 255, 0.10);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.10);
+    }
+
+    .brand-mark.apple {
+      font-size: 17px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
+    .brand-mark.rayban {
+      min-width: 54px;
+      font-size: 11px;
+      letter-spacing: -0.045em;
+    }
+
+    .brand-mark.dyson {
+      min-width: 48px;
+      font-size: 11px;
+      letter-spacing: 0.01em;
+    }
+
+    .brand-mark.ps {
+      min-width: 38px;
+      font-size: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark.ipro-mini {
+      min-width: 36px;
+      color: #cfe6ff;
+      background:
+        linear-gradient(135deg, rgba(0,122,255,0.55), rgba(90,176,255,0.18)),
+        rgba(255,255,255,0.05);
+      border-color: rgba(0,122,255,0.38);
+    }
+
+    .product-brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 2px;
+    }
+
+    .product-brand-name {
+      color: var(--muted-2);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+
+
+    .product-photo-caption {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      z-index: 2;
+      display: inline-flex;
+      width: fit-content;
+      max-width: calc(100% - 20px);
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(5, 5, 5, 0.72);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .product-photo {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: 16 / 11;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      background:
+        radial-gradient(circle at 28% 8%, rgba(0, 122, 255, 0.18), transparent 42%),
+        linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.025)),
+        #090b10;
+      border: 1px solid rgba(255, 255, 255, 0.095);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    .product-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, transparent 54%, rgba(0,0,0,0.34) 100%),
+        linear-gradient(115deg, transparent 0 40%, rgba(255,255,255,0.11) 47%, transparent 54% 100%);
+      pointer-events: none;
+    }
+
+    .product-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+      padding: 10px;
+      background: linear-gradient(180deg, #f5f6f8, #eceff3);
+      transform: scale(1.01);
+      transition: transform 0.35s ease, filter 0.35s ease;
+      filter: saturate(1.03) contrast(1.02);
+      cursor: zoom-in;
+    }
+
+    .product-card:hover .product-photo img {
+      transform: scale(1.065);
+    }
+
+    .product-card {
+      min-height: 184px;
+      padding: 22px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025)),
+        var(--card);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+      transition: opacity 0.25s ease, transform 0.28s ease, border-color 0.28s ease, background 0.28s ease, box-shadow 0.28s ease;
+      touch-action: manipulation;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 122, 255, 0.54);
+      background:
+        radial-gradient(circle at 70% 10%, rgba(0, 122, 255, 0.18), transparent 36%),
+        var(--card-2);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.32);
+    }
+
+    .product-card.hidden {
+      display: none !important;
+    }
+
+    .product-top {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .category {
+      width: fit-content;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: #acd4ff;
+      font-size: 12px;
+      letter-spacing: 0.02em;
+    }
+
+    .product-card h3 {
+      font-size: 22px;
+      letter-spacing: -0.035em;
+      line-height: 1.08;
+    }
+
+    .product-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #d6eaff;
+      font-size: 14px;
+    }
+
+    .stores-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .store-card {
+      overflow: hidden;
+      border-radius: 28px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      transition: transform 0.28s ease, border-color 0.28s ease;
+    }
+
+    .store-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 122, 255, 0.45);
+    }
+
+
+    .store-media {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      padding: 10px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(0, 122, 255, 0.10), transparent 42%),
+        #0b0d11;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+    }
+
+    .store-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+      image-rendering: auto;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      filter: saturate(1.02) contrast(1.02);
+      background: #0b0d11;
+      border-radius: 20px;
+      cursor: zoom-in;
+    }
+
+    .store-card:hover .store-img {
+      transform: translateZ(0);
+      filter: saturate(1.04) contrast(1.03);
+    }
+    .img-fallback {
+      display: none;
+      width: 100%;
+      height: 100%;
+      place-items: center;
+      text-align: center;
+      color: var(--muted);
+      padding: 24px;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(0, 122, 255, 0.20), transparent 36%),
+        #0b0d11;
+    }
+
+    .store-img.failed {
+      display: none;
+    }
+
+    .store-img.failed + .img-fallback {
+      display: grid;
+    }
+
+    .store-body {
+      padding: 22px;
+    }
+
+    .store-body h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+      letter-spacing: -0.035em;
+    }
+
+    .store-address {
+      color: var(--muted);
+      min-height: 48px;
+      margin-bottom: 15px;
+    }
+
+    .store-links {
+      display: grid;
+      gap: 9px;
+    }
+
+    .store-links a {
+      display: inline-flex;
+      width: fit-content;
+      color: #cfe6ff;
+      transition: color 0.25s ease;
+      word-break: break-word;
+    }
+
+    .store-links a:hover {
+      color: #fff;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .review-card {
+      padding: 24px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid var(--line);
+    }
+
+    .review-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .stars {
+      color: var(--blue);
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+    }
+
+    .review-card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .review-card strong {
+      display: block;
+    }
+
+    .review-card span {
+      color: var(--muted-2);
+      font-size: 14px;
+    }
+
+    .notice {
+      padding: 26px;
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(0, 122, 255, 0.24), transparent 30%),
+        rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(0, 122, 255, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .notice p {
+      color: var(--muted);
+      max-width: 720px;
+      font-size: 17px;
+    }
+
+
+    .extra-info-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      padding: 34px;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(0, 122, 255, 0.30), transparent 34%),
+        radial-gradient(circle at 90% 18%, rgba(90, 176, 255, 0.14), transparent 32%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.035)),
+        #0b0d11;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+    }
+
+    .extra-info-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, transparent 0 38%, rgba(255, 255, 255, 0.08) 45%, transparent 53% 100%);
+      pointer-events: none;
+    }
+
+    .extra-info-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .extra-main-card,
+    .extra-contact-card {
+      border-radius: 26px;
+      background: rgba(5, 5, 5, 0.58);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .extra-main-card {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 26px;
+    }
+
+    .extra-eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: #cfe6ff;
+      background: rgba(0, 122, 255, 0.16);
+      border: 1px solid rgba(0, 122, 255, 0.32);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .extra-eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--blue);
+      box-shadow: 0 0 0 7px rgba(0, 122, 255, 0.13);
+    }
+
+    .extra-main-card h2 {
+      margin-bottom: 16px;
+    }
+
+    .extra-main-card p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 610px;
+    }
+
+    .extra-time {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      align-items: center;
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(0, 122, 255, 0.13);
+      border: 1px solid rgba(0, 122, 255, 0.22);
+    }
+
+    .extra-time-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--blue), #5ab0ff);
+      box-shadow: 0 14px 36px rgba(0, 122, 255, 0.25);
+      font-size: 22px;
+    }
+
+    .extra-time strong {
+      display: block;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: -0.035em;
+      margin-bottom: 4px;
+    }
+
+    .extra-time span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .extra-contact-card {
+      padding: 22px;
+    }
+
+    .extra-contact-title {
+      margin-bottom: 16px;
+      color: #fff;
+      font-size: 22px;
+      letter-spacing: -0.035em;
+    }
+
+    .extra-contact-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .extra-contact-item {
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      display: grid;
+      gap: 10px;
+    }
+
+    .extra-contact-item strong {
+      font-size: 19px;
+    }
+
+    .extra-contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .extra-contact-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(0, 122, 255, 0.15);
+      border: 1px solid rgba(0, 122, 255, 0.28);
+      color: #d6eaff;
+      font-size: 14px;
+      transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+    }
+
+    .extra-contact-links a:hover {
+      transform: translateY(-2px);
+      background: var(--blue);
+      color: #fff;
+    }
+
+
+    .seo-text {
+      padding-top: 0;
+    }
+
+    .seo-text .notice h2 {
+      margin-bottom: 10px;
+      font-size: clamp(24px, 3vw, 38px);
+      letter-spacing: -0.04em;
+    }
+
+    .seo-text .notice p {
+      max-width: 980px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 34px 0;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .footer b {
+      color: #fff;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(0, 0, 0, 0.72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .modal.show {
+      display: flex;
+      animation: fadeIn 0.24s ease both;
+    }
+
+    .modal-box {
+      width: min(100%, 520px);
+      padding: 28px;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 80% 0%, rgba(0, 122, 255, 0.22), transparent 32%),
+        #101218;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      box-shadow: var(--shadow);
+      animation: scaleIn 0.24s ease both;
+    }
+
+    .modal-category {
+      display: inline-flex;
+      margin-bottom: 14px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: #b9dcff;
+      font-size: 13px;
+    }
+
+    .modal-title {
+      font-size: 34px;
+      line-height: 1;
+      letter-spacing: -0.045em;
+      margin-bottom: 14px;
+    }
+
+    .modal-desc {
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 24px;
+    }
+
+    .modal-close {
+      width: 100%;
+      background: var(--blue);
+      border-radius: 999px;
+      min-height: 48px;
+      transition: transform 0.25s ease, background 0.25s ease;
+      touch-action: manipulation;
+    }
+
+    .modal-close:hover {
+      transform: translateY(-2px);
+      background: #1688ff;
+    }
+
+
+    #catalog {
+      scroll-margin-top: 88px;
+    }
+
+    .catalog-radio {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #filter-all:checked ~ .filters label[for="filter-all"],
+    #filter-iphone:checked ~ .filters label[for="filter-iphone"],
+    #filter-ipad:checked ~ .filters label[for="filter-ipad"],
+    #filter-macbook:checked ~ .filters label[for="filter-macbook"],
+    #filter-airpods:checked ~ .filters label[for="filter-airpods"],
+    #filter-watch:checked ~ .filters label[for="filter-watch"],
+    #filter-rayban:checked ~ .filters label[for="filter-rayban"],
+    #filter-dyson:checked ~ .filters label[for="filter-dyson"],
+    #filter-ps5:checked ~ .filters label[for="filter-ps5"],
+    #filter-accessories:checked ~ .filters label[for="filter-accessories"] {
+      color: #fff;
+      background: var(--blue);
+      border-color: var(--blue);
+      transform: translateY(-2px);
+    }
+
+    #filter-iphone:checked ~ .products-grid .product-card:not([data-category="iPhone"]),
+    #filter-ipad:checked ~ .products-grid .product-card:not([data-category="iPad"]),
+    #filter-macbook:checked ~ .products-grid .product-card:not([data-category="MacBook"]),
+    #filter-airpods:checked ~ .products-grid .product-card:not([data-category="AirPods"]),
+    #filter-watch:checked ~ .products-grid .product-card:not([data-category="Watch"]),
+    #filter-rayban:checked ~ .products-grid .product-card:not([data-category="Ray-Ban"]),
+    #filter-dyson:checked ~ .products-grid .product-card:not([data-category="Dyson"]),
+    #filter-ps5:checked ~ .products-grid .product-card:not([data-category="PS5"]),
+    #filter-accessories:checked ~ .products-grid .product-card:not([data-category="Аксессуары"]) {
+      display: none !important;
+    }
+
+    .css-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(0, 0, 0, 0.72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .css-modal:target {
+      display: flex;
+      animation: fadeIn 0.24s ease both;
+    }
+
+    .css-modal-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .css-modal .modal-box {
+      position: relative;
+      z-index: 1;
+    }
+
+    .modal-close {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #fff;
+    }
+
+
+
+    .photo-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 160;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .photo-lightbox.show {
+      display: flex;
+      animation: fadeIn 0.2s ease both;
+    }
+
+    .photo-lightbox-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      border: 0;
+      cursor: zoom-out;
+    }
+
+    .photo-lightbox-img {
+      position: relative;
+      z-index: 1;
+      width: auto;
+      height: auto;
+      max-width: calc(100vw - 44px);
+      max-height: calc(100svh - 88px);
+      object-fit: contain;
+      object-position: center center;
+      border-radius: 18px;
+      box-shadow: 0 26px 90px rgba(0, 0, 0, 0.65);
+      background: transparent;
+    }
+
+    .photo-lightbox-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      z-index: 2;
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #fff;
+      font-size: 30px;
+      line-height: 1;
+      display: grid;
+      place-items: center;
+      transition: transform 0.22s ease, background 0.22s ease;
+      cursor: pointer;
+    }
+
+    .photo-lightbox-close:hover {
+      transform: translateY(-2px);
+      background: rgba(0, 122, 255, 0.85);
+    }
+
+    @media (max-width: 760px) {
+      .photo-lightbox {
+        padding: 12px;
+      }
+
+      .photo-lightbox-img {
+        max-width: calc(100vw - 24px);
+        max-height: calc(100svh - 84px);
+        border-radius: 14px;
+      }
+
+      .photo-lightbox-close {
+        top: 12px;
+        right: 12px;
+        width: 42px;
+        height: 42px;
+      }
+    }
+
+    .photo-lightbox:not(.show) {
+      display: none !important;
+      pointer-events: none !important;
+    }
+
+    .photo-lightbox.show {
+      pointer-events: auto;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.96) translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    @keyframes shine {
+      0%, 55% { transform: translateX(-35%) rotate(10deg); opacity: 0; }
+      70% { opacity: 1; }
+      100% { transform: translateX(65%) rotate(10deg); opacity: 0; }
+    }
+
+    @media (max-width: 1100px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+  
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 26px;
+      height: 26px;
+      padding: 0 7px;
+      border-radius: 999px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.13), rgba(255,255,255,0.045)),
+        rgba(0, 122, 255, 0.10);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.10);
+    }
+
+    .brand-mark.apple {
+      font-size: 17px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
+    .brand-mark.rayban {
+      min-width: 54px;
+      font-size: 11px;
+      letter-spacing: -0.045em;
+    }
+
+    .brand-mark.dyson {
+      min-width: 48px;
+      font-size: 11px;
+      letter-spacing: 0.01em;
+    }
+
+    .brand-mark.ps {
+      min-width: 38px;
+      font-size: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark.ipro-mini {
+      min-width: 36px;
+      color: #cfe6ff;
+      background:
+        linear-gradient(135deg, rgba(0,122,255,0.55), rgba(90,176,255,0.18)),
+        rgba(255,255,255,0.05);
+      border-color: rgba(0,122,255,0.38);
+    }
+
+    .product-brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 2px;
+    }
+
+    .product-brand-name {
+      color: var(--muted-2);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      :root {
+        --side: 14px;
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+
+      .nav {
+        min-height: 68px;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 24px;
+      }
+
+      .logo-mark {
+        width: 36px;
+        height: 36px;
+      }
+
+      .nav-links {
+        gap: 14px;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 8px 0 8px 4px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-links a {
+        flex: 0 0 auto;
+        font-size: 14px;
+      }
+
+      .hero {
+        padding: 42px 0 38px;
+        gap: 26px;
+      }
+
+      h1 {
+        font-size: clamp(38px, 12vw, 54px);
+        letter-spacing: -0.065em;
+      }
+
+      .hero-text {
+        font-size: 16.5px;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .btn {
+        min-height: 46px;
+        padding: 12px 14px;
+        font-size: 14px;
+      }
+
+      .hero-facts {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .fact {
+        padding: 11px;
+      }
+
+      .fact strong {
+        font-size: 18px;
+      }
+
+      .fact span {
+        font-size: 11.5px;
+      }
+
+      .hero-panel {
+        min-height: 395px;
+        border-radius: 28px;
+      }
+
+      .float-1 {
+        width: 110px;
+        height: 158px;
+        left: 18px;
+        top: 26px;
+      }
+
+      .float-2 {
+        width: 150px;
+        height: 96px;
+        right: 16px;
+        top: 84px;
+      }
+
+      .float-3 {
+        width: 82px;
+        height: 82px;
+        right: 46px;
+        top: 214px;
+      }
+
+      .device-card {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        padding: 17px;
+        border-radius: 22px;
+      }
+
+      .device-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .device-pill {
+        min-height: 74px;
+        padding: 11px;
+      }
+
+      .device-pill span {
+        font-size: 12px;
+      }
+
+      section {
+        padding: 50px 0;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+
+      h2 {
+        font-size: clamp(32px, 10vw, 44px);
+      }
+
+      .section-subtitle {
+        font-size: 15.5px;
+      }
+
+      .filters {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding: 0 14px 8px;
+        margin-left: -14px;
+        margin-right: -14px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .filters::-webkit-scrollbar {
+        display: none;
+      }
+
+      .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      -webkit-user-select: none;
+      user-select: none;
+        flex: 0 0 auto;
+      }
+
+  
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 26px;
+      height: 26px;
+      padding: 0 7px;
+      border-radius: 999px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.13), rgba(255,255,255,0.045)),
+        rgba(0, 122, 255, 0.10);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.10);
+    }
+
+    .brand-mark.apple {
+      font-size: 17px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
+    .brand-mark.rayban {
+      min-width: 54px;
+      font-size: 11px;
+      letter-spacing: -0.045em;
+    }
+
+    .brand-mark.dyson {
+      min-width: 48px;
+      font-size: 11px;
+      letter-spacing: 0.01em;
+    }
+
+    .brand-mark.ps {
+      min-width: 38px;
+      font-size: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark.ipro-mini {
+      min-width: 36px;
+      color: #cfe6ff;
+      background:
+        linear-gradient(135deg, rgba(0,122,255,0.55), rgba(90,176,255,0.18)),
+        rgba(255,255,255,0.05);
+      border-color: rgba(0,122,255,0.38);
+    }
+
+    .product-brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 2px;
+    }
+
+    .product-brand-name {
+      color: var(--muted-2);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .product-card {
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      -webkit-user-select: none;
+      user-select: none;
+        min-height: 172px;
+        padding: 16px;
+        border-radius: 20px;
+      }
+
+
+      .product-photo {
+        aspect-ratio: 1.08 / 1;
+        border-radius: 16px;
+        margin-bottom: 12px;
+      }
+
+      .product-photo img {
+        padding: 8px;
+      }
+
+      .product-card h3 {
+        font-size: 19px;
+      }
+
+      .product-card p {
+        font-size: 13.5px;
+      }
+
+      .stores-grid,
+      .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .store-card {
+        border-radius: 24px;
+      }
+
+      .store-media {
+        aspect-ratio: 3 / 4;
+      }
+
+      .store-body,
+      .review-card {
+        padding: 18px;
+      }
+
+      .store-body h3,
+      .review-card h3 {
+        font-size: 22px;
+      }
+
+      .store-address {
+        min-height: 0;
+      }
+
+      .notice {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 22px;
+        border-radius: 24px;
+      }
+
+      .notice p {
+        font-size: 15.5px;
+      }
+
+      .notice .btn {
+        width: 100%;
+      }
+
+
+      .extra-info-wrap {
+        padding: 18px;
+        border-radius: 26px;
+      }
+
+      .extra-info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .extra-main-card,
+      .extra-contact-card {
+        border-radius: 22px;
+      }
+
+      .extra-main-card {
+        padding: 20px;
+      }
+
+      .extra-main-card p {
+        font-size: 15.5px;
+      }
+
+      .extra-time {
+        grid-template-columns: 1fr;
+      }
+
+      .extra-contact-links {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+
+      .selection-strip {
+        margin-top: -18px;
+        padding-bottom: 34px;
+      }
+
+      .selection-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding: 10px;
+        border-radius: 24px;
+      }
+
+      .selection-item {
+        padding: 15px;
+        border-radius: 18px;
+      }
+
+      .selection-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 13px;
+        margin-bottom: 10px;
+      }
+
+      .selection-item strong {
+        font-size: 15px;
+      }
+
+      .selection-item span {
+        font-size: 12px;
+      }
+
+      .floating-contact {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        justify-content: center;
+      }
+
+      .floating-contact a {
+        flex: 1;
+        min-height: 42px;
+      }
+
+      .footer {
+        padding-bottom: 34px;
+      }
+
+      .modal-box {
+        padding: 22px;
+        border-radius: 24px;
+      }
+
+      .modal-title {
+        font-size: 29px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      :root {
+        --side: 10px;
+      }
+
+      .nav {
+        gap: 10px;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+      }
+
+      .hero-actions {
+        grid-template-columns: 1fr;
+      }
+
+  
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 26px;
+      height: 26px;
+      padding: 0 7px;
+      border-radius: 999px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.13), rgba(255,255,255,0.045)),
+        rgba(0, 122, 255, 0.10);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.10);
+    }
+
+    .brand-mark.apple {
+      font-size: 17px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
+    .brand-mark.rayban {
+      min-width: 54px;
+      font-size: 11px;
+      letter-spacing: -0.045em;
+    }
+
+    .brand-mark.dyson {
+      min-width: 48px;
+      font-size: 11px;
+      letter-spacing: 0.01em;
+    }
+
+    .brand-mark.ps {
+      min-width: 38px;
+      font-size: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark.ipro-mini {
+      min-width: 36px;
+      color: #cfe6ff;
+      background:
+        linear-gradient(135deg, rgba(0,122,255,0.55), rgba(90,176,255,0.18)),
+        rgba(255,255,255,0.05);
+      border-color: rgba(0,122,255,0.38);
+    }
+
+    .product-brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 2px;
+    }
+
+    .product-brand-name {
+      color: var(--muted-2);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-facts {
+        grid-template-columns: 1fr;
+      }
+
+      .device-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+<meta content="index, follow" name="robots"/>
+<meta content="#05070b" name="theme-color"/>
+<meta content="iPro" name="author"/>
+<meta content="RU-TA" name="geo.region"/>
+<meta content="Казань, Нижнекамск, Елабуга" name="geo.placename"/>
+<meta content="iPro, iPro Казань, iPro Нижнекамск, iPro Елабуга, купить iPhone Казань, купить MacBook Казань, купить AirPods Казань, Apple Watch Казань, Dyson Казань, PlayStation 5 Казань, Ray-Ban Meta Татарстан, оригинальная техника Apple Татарстан" name="keywords"/>
+<meta content="website" property="og:type"/>
+<meta content="iPro Татарстан" property="og:site_name"/>
+<meta content="iPro Татарстан — оригинальная техника Apple, Dyson, PlayStation, Ray-Ban" property="og:title"/>
+<meta content="iPro — магазины оригинальной техники в Казани, Нижнекамске и Елабуге. iPhone, iPad, MacBook, AirPods, Apple Watch, Dyson, PlayStation 5, Ray-Ban, аксессуары. Гарантия 1 год." property="og:description"/>
+<meta content="ru_RU" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="iPro Татарстан — оригинальная техника Apple, Dyson, PlayStation, Ray-Ban" name="twitter:title"/>
+<meta content="iPro — магазины оригинальной техники в Казани, Нижнекамске и Елабуге. iPhone, iPad, MacBook, AirPods, Apple Watch, Dyson, PlayStation 5, Ray-Ban, аксессуары. Гарантия 1 год." name="twitter:description"/>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ElectronicsStore",
+    "name": "iPro Татарстан",
+    "description": "iPro — магазины оригинальной техники в Казани, Нижнекамске и Елабуге. iPhone, iPad, MacBook, AirPods, Apple Watch, Dyson, PlayStation 5, Ray-Ban, аксессуары. Гарантия 1 год.",
+    "areaServed": [
+      "Казань",
+      "Нижнекамск",
+      "Елабуга",
+      "Республика Татарстан"
+    ],
+    "brand": [
+      {
+        "@type": "Brand",
+        "name": "Apple"
+      },
+      {
+        "@type": "Brand",
+        "name": "Dyson"
+      },
+      {
+        "@type": "Brand",
+        "name": "PlayStation"
+      },
+      {
+        "@type": "Brand",
+        "name": "Ray-Ban"
+      }
+    ],
+    "department": [
+      {
+        "@type": "ElectronicsStore",
+        "name": "iPro Казань",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ул. Козина, 9, ЖК Свобода",
+          "addressLocality": "Казань",
+          "addressRegion": "Республика Татарстан",
+          "addressCountry": "RU"
+        },
+        "telephone": "+79871837777",
+        "openingHours": "Mo-Su 10:00-20:00"
+      },
+      {
+        "@type": "ElectronicsStore",
+        "name": "iPro Нижнекамск",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "пр. Мира, 45А, ТЦ Аврора",
+          "addressLocality": "Нижнекамск",
+          "addressRegion": "Республика Татарстан",
+          "addressCountry": "RU"
+        },
+        "telephone": "+79874018881",
+        "openingHours": "Mo-Su 10:00-20:00"
+      },
+      {
+        "@type": "ElectronicsStore",
+        "name": "iPro Елабуга",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Окружное шоссе, 37А, ТЦ Эссен",
+          "addressLocality": "Елабуга",
+          "addressRegion": "Республика Татарстан",
+          "addressCountry": "RU"
+        },
+        "telephone": "+79867179895",
+        "openingHours": "Mo-Su 10:00-20:00"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<div aria-hidden="true" class="premium-bg">
+<span class="premium-orb orb-one"></span>
+<span class="premium-orb orb-two"></span>
+<span class="premium-orb orb-three"></span>
+</div>
+<header class="header">
+<nav class="nav">
+<a aria-label="iPro" class="logo" href="#top">
+<span class="logo-mark">i</span>
+<span>iPro</span>
+</a>
+<div aria-label="Навигация" class="nav-links">
+<a href="#catalog">Каталог</a>
+<a href="#stores">Магазины</a>
+<a href="#reviews">Отзывы</a>
+<a href="#extra-info">Доп инфа</a>
+</div>
+</nav>
+</header>
+<main id="top">
+<section class="hero page">
+<div class="hero-content">
+<div class="badge">
+<span class="badge-dot"></span>
+          Оригинальная техника в Татарстане
+        </div>
+<h1>iPro — техника Apple <span class="blue">без лишнего</span>.</h1>
+<p class="hero-text">
+          iPhone, iPad, MacBook, AirPods, Apple Watch, Ray-Ban, Dyson, PS5 и аксессуары.
+          Только оригинальная техника, гарантия 1 год. Ждём вас в магазинах iPro.
+        </p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#catalog">Смотреть каталог</a>
+<a class="btn" href="#stores">Адреса магазинов</a>
+</div>
+<div aria-label="Преимущества" class="hero-facts">
+<div class="fact">
+<strong>3</strong>
+<span>магазина в Татарстане</span>
+</div>
+<div class="fact">
+<strong>1 год</strong>
+<span>гарантия на технику</span>
+</div>
+<div class="fact">
+<strong>100%</strong>
+<span>только оригинал</span>
+</div>
+</div>
+</div>
+</section>
+<div aria-hidden="true" class="lux-line"></div>
+<section aria-label="Преимущества iPro" class="page selection-strip">
+<div class="selection-grid">
+<div class="selection-item">
+<div class="selection-icon">✓</div>
+<strong>Только оригинал</strong>
+<span>Техника и аксессуары без копий и сомнительного происхождения.</span>
+</div>
+<div class="selection-item">
+<div class="selection-icon">1</div>
+<strong>Гарантия 1 год</strong>
+<span>Понятные условия покупки и гарантийная поддержка.</span>
+</div>
+<div class="selection-item">
+<div class="selection-icon">i</div>
+<strong>Живой магазин</strong>
+<span>Можно прийти, посмотреть и уточнить наличие на месте.</span>
+</div>
+<div class="selection-item">
+<div class="selection-icon">3</div>
+<strong>Татарстан</strong>
+<span>Казань, Нижнекамск и Елабуга — выбирайте удобный магазин.</span>
+</div>
+</div>
+</section>
+<section class="page" id="catalog">
+<div class="section-head">
+<div>
+<div class="section-kicker">Выбор техники</div>
+<h2>Каталог</h2>
+</div>
+<p class="section-subtitle">
+          Выберите категорию и откройте карточку товара. Цены не указаны — наличие и актуальные условия уточняйте в магазине.
+        </p>
+</div>
+<input checked="" class="catalog-radio" id="filter-all" name="catalogFilter" type="radio"/>
+<input class="catalog-radio" id="filter-iphone" name="catalogFilter" type="radio"/>
+<input class="catalog-radio" id="filter-ipad" name="catalogFilter" type="radio"/>
+<input class="catalog-radio" id="filter-macbook" name="catalogFilter" type="radio"/>
+<input class="catalog-radio" id="filter-airpods" name="catalogFilter" type="radio"/>
+<input class="catalog-radio" id="filter-watch" name="catalogFilter" type="radio"/>
+<input class="catalog-radio" id="filter-rayban" name="catalogFilter" type="radio"/>
+<input class="catalog-radio" id="filter-dyson" name="catalogFilter" type="radio"/>
+<input class="catalog-radio" id="filter-ps5" name="catalogFilter" type="radio"/>
+<input class="catalog-radio" id="filter-accessories" name="catalogFilter" type="radio"/>
+<div aria-label="Фильтры каталога" class="filters">
+<label class="filter-btn" for="filter-all">Все</label>
+<label class="filter-btn" for="filter-iphone">iPhone</label>
+<label class="filter-btn" for="filter-ipad">iPad</label>
+<label class="filter-btn" for="filter-macbook">MacBook</label>
+<label class="filter-btn" for="filter-airpods">AirPods</label>
+<label class="filter-btn" for="filter-watch">Watch</label>
+<label class="filter-btn" for="filter-rayban">Ray-Ban</label>
+<label class="filter-btn" for="filter-dyson">Dyson</label>
+<label class="filter-btn" for="filter-ps5">PS5</label>
+<label class="filter-btn" for="filter-accessories">Аксессуары</label>
+</div>
+<div class="products-grid" id="productsGrid">
+<a aria-label="Открыть карточку iPhone 17" class="product-card" data-category="iPhone" data-description="Современный iPhone для повседневных задач, фото, видео, общения и работы. Оригинальная техника с гарантией 1 год." data-title="iPhone 17" href="#modal-iphone-17">
+<div class="product-photo"><img alt=" iPhone 17" decoding="async" loading="eager" src="images/01-iphone-17.png"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="Apple" class="brand-mark apple"></span><span class="product-brand-name">Apple</span></div><span class="category">iPhone</span><h3>iPhone 17</h3><p>Универсальная модель для работы, связи, фото и видео каждый день.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label="Открыть карточку iPhone 17 Pro" class="product-card" data-category="iPhone" data-description="Флагманская Pro-модель для тех, кому важны производительность, камера, дисплей и премиальный опыт использования." data-title="iPhone 17 Pro" href="#modal-iphone-17-pro">
+<div class="product-photo"><img alt=" iPhone 17 Pro" decoding="async" loading="eager" src="images/02-iphone-17-pro.jpg"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="Apple" class="brand-mark apple"></span><span class="product-brand-name">Apple</span></div><span class="category">iPhone</span><h3>iPhone 17 Pro</h3><p>Pro-версия с акцентом на камеру, мощность и премиальный корпус.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label="Открыть карточку iPhone 17 Pro Max" class="product-card" data-category="iPhone" data-description="Максимальная версия iPhone с крупным экраном, высокой автономностью и флагманскими возможностями для фото, видео и игр." data-title="iPhone 17 Pro Max" href="#modal-iphone-17-pro-max">
+<div class="product-photo"><img alt=" iPhone 17 Pro Max" decoding="async" loading="eager" src="images/03-iphone-17-pro-max.png"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="Apple" class="brand-mark apple"></span><span class="product-brand-name">Apple</span></div><span class="category">iPhone</span><h3>iPhone 17 Pro Max</h3><p>Большой экран, высокая автономность и максимум возможностей iPhone.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label="Открыть карточку iPhone 17 Air" class="product-card" data-category="iPhone" data-description="Тонкая и лёгкая модель iPhone для тех, кто ценит компактность, стиль и удобство в повседневном использовании." data-title="iPhone 17 Air" href="#modal-iphone-17-air">
+<div class="product-photo"><img alt=" iPhone 17 Air" decoding="async" loading="eager" src="images/04-iphone-17-air.jpg"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="Apple" class="brand-mark apple"></span><span class="product-brand-name">Apple</span></div><span class="category">iPhone</span><h3>iPhone 17 Air</h3><p>Лёгкий и стильный iPhone для комфортного ежедневного использования.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label="Открыть карточку iPhone SE" class="product-card" data-category="iPhone" data-description="Компактный iPhone с привычным форматом, быстрым интерфейсом и всеми базовыми возможностями смартфона Apple." data-title="iPhone SE" href="#modal-iphone-se">
+<div class="product-photo"><img alt=" iPhone SE" decoding="async" loading="eager" src="images/05-iphone-se.jpg"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="Apple" class="brand-mark apple"></span><span class="product-brand-name">Apple</span></div><span class="category">iPhone</span><h3>iPhone SE</h3><p>Компактная модель для тех, кому нужен простой и быстрый iPhone.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label="Открыть карточку iPad Pro" class="product-card" data-category="iPad" data-description="Планшет Apple для профессиональных задач, графики, монтажа, работы с документами, учёбы и развлечений." data-title="iPad Pro" href="#modal-ipad-pro">
+<div class="product-photo"><img alt=" iPad Pro" decoding="async" loading="eager" src="images/06-ipad-pro.png"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="Apple" class="brand-mark apple"></span><span class="product-brand-name">Apple</span></div><span class="category">iPad</span><h3>iPad Pro</h3><p>Мощный iPad для творчества, учёбы, работы и мультимедиа.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label="Открыть карточку iPad Air" class="product-card" data-category="iPad" data-description="Лёгкий и производительный iPad для учебы, работы, заметок, фильмов, игр и повседневных задач." data-title="iPad Air" href="#modal-ipad-air">
+<div class="product-photo"><img alt=" iPad Air" decoding="async" loading="eager" src="images/07-ipad-air.jpg"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="Apple" class="brand-mark apple"></span><span class="product-brand-name">Apple</span></div><span class="category">iPad</span><h3>iPad Air</h3><p>Баланс лёгкости, мощности и удобства для разных сценариев.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label="Открыть карточку iPad" class="product-card" data-category="iPad" data-description="Классический iPad для обучения, чтения, видео, браузера, заметок и простых рабочих задач." data-title="iPad" href="#modal-ipad">
+<div class="product-photo"><img alt=" iPad" decoding="async" loading="eager" src="images/08-ipad.jpg"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="Apple" class="brand-mark apple"></span><span class="product-brand-name">Apple</span></div><span class="category">iPad</span><h3>iPad</h3><p>Базовая модель Apple для дома, учёбы и развлечений.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label='Открыть карточку MacBook Air 15"' class="product-card" data-category="MacBook" data-description="Тонкий MacBook с большим экраном для работы, учебы, презентаций, браузера, документов и повседневных задач." data-title='MacBook Air 15"' href="#modal-macbook-air-15">
+<div class="product-photo"><img "="" alt=" MacBook Air 15" decoding="async" loading="eager" src="images/09-macbook-air-15.jpg"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="Apple" class="brand-mark apple"></span><span class="product-brand-name">Apple</span></div><span class="category">MacBook</span><h3>MacBook Air 15"</h3><p>Большой экран в тонком корпусе для комфортной работы.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label='Открыть карточку MacBook Air 13"' class="product-card" data-category="MacBook" data-description="Компактный и лёгкий MacBook для мобильной работы, учебы, поездок, документов и онлайн-задач." data-title='MacBook Air 13"' href="#modal-macbook-air-13">
+<div class="product-photo"><img "="" alt=" MacBook Air 13" decoding="async" loading="eager" src="images/10-macbook-air-13.jpg"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="Apple" class="brand-mark apple"></span><span class="product-brand-name">Apple</span></div><span class="category">MacBook</span><h3>MacBook Air 13"</h3><p>Лёгкий ноутбук Apple для ежедневной мобильной работы.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label='Открыть карточку MacBook Pro 14"' class="product-card" data-category="MacBook" data-description="Профессиональный MacBook для сложных задач, кода, дизайна, монтажа, многозадачности и долгой работы." data-title='MacBook Pro 14"' href="#modal-macbook-pro-14">
+<div class="product-photo"><img "="" alt=" MacBook Pro 14" decoding="async" loading="eager" src="images/11-macbook-pro-14.jpg"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="Apple" class="brand-mark apple"></span><span class="product-brand-name">Apple</span></div><span class="category">MacBook</span><h3>MacBook Pro 14"</h3><p>Профессиональная модель для высокой нагрузки и рабочих процессов.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label="Открыть карточку AirPods Pro 3" class="product-card" data-category="AirPods" data-description="Беспроводные наушники Apple с активным шумоподавлением, удобной посадкой и качественным звуком." data-title="AirPods Pro 3" href="#modal-airpods-pro-2">
+<div class="product-photo"><img alt="AirPods Pro 3" decoding="async" loading="eager" src="images/12-airpods-pro-3.jpg"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="Apple" class="brand-mark apple"></span><span class="product-brand-name">Apple</span></div><span class="category">AirPods</span><h3>AirPods Pro 3</h3><p>Шумоподавление, удобная посадка и чистый звук Apple.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label="Открыть карточку AirPods 4" class="product-card" data-category="AirPods" data-description="Лёгкие беспроводные наушники Apple для звонков, музыки, видео, прогулок и повседневного использования." data-title="AirPods 4" href="#modal-airpods-4">
+<div class="product-photo"><img alt=" AirPods 4" decoding="async" loading="eager" src="images/13-airpods-4.jpg"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="Apple" class="brand-mark apple"></span><span class="product-brand-name">Apple</span></div><span class="category">AirPods</span><h3>AirPods 4</h3><p>Удобные наушники Apple для музыки, видео и звонков.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label="Открыть карточку AirPods Max" class="product-card" data-category="AirPods" data-description="Полноразмерные наушники Apple с премиальными материалами, объёмным звуком и активным шумоподавлением." data-title="AirPods Max" href="#modal-airpods-max">
+<div class="product-photo"><img alt=" AirPods Max" decoding="async" loading="eager" src="images/14-airpods-max.jpg"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="Apple" class="brand-mark apple"></span><span class="product-brand-name">Apple</span></div><span class="category">AirPods</span><h3>AirPods Max</h3><p>Полноразмерный формат, мощный звук и премиальное исполнение.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label="Открыть карточку Apple Watch Ultra 3" class="product-card" data-category="Watch" data-description="Прочные часы Apple для спорта, активности, тренировок, путешествий и контроля важных показателей." data-title="Apple Watch Ultra 3" href="#modal-apple-watch-ultra-2">
+<div class="product-photo"><img alt="Apple Watch Ultra 3" decoding="async" loading="eager" src="images/15-apple-watch-ultra-3.jpg"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="Apple" class="brand-mark apple"></span><span class="product-brand-name">Apple</span></div><span class="category">Watch</span><h3>Apple Watch Ultra 3</h3><p>Прочные часы Apple для спорта, активности и путешествий.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label="Открыть карточку Apple Watch Series 11" class="product-card" data-category="Watch" data-description="Современные Apple Watch для уведомлений, тренировок, здоровья, повседневных задач и связки с iPhone." data-title="Apple Watch Series 11" href="#modal-apple-watch-series-10">
+<div class="product-photo"><img alt="Apple Watch Series 11" decoding="async" loading="eager" src="images/16-apple-watch-series-11.jpg"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="Apple" class="brand-mark apple"></span><span class="product-brand-name">Apple</span></div><span class="category">Watch</span><h3>Apple Watch Series 11</h3><p>Часы Apple для здоровья, спорта и удобной связи с iPhone.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label="Открыть карточку Apple Watch SE 3" class="product-card" data-category="Watch" data-description="Доступная модель Apple Watch с основными функциями для активности, уведомлений, тренировок и повседневного использования." data-title="Apple Watch SE 3" href="#modal-apple-watch-se">
+<div class="product-photo"><img alt="Apple Watch SE 3" decoding="async" loading="eager" src="images/17-apple-watch-se-3.jpg"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="Apple" class="brand-mark apple"></span><span class="product-brand-name">Apple</span></div><span class="category">Watch</span><h3>Apple Watch SE 3</h3><p>Базовые Apple Watch с главными функциями на каждый день.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label="Открыть карточку Ray-Ban Meta Gen 2" class="product-card" data-category="Ray-Ban" data-description="Умные очки Ray-Ban Meta Gen 2 для съёмки, общения, контента и удобного повседневного использования." data-title="Ray-Ban Meta Gen 2" href="#modal-ray-ban-meta-gen-2">
+<div class="product-photo"><img alt=" Ray-Ban Meta Gen 2" decoding="async" loading="eager" src="images/18-ray-ban-meta-gen-2.jpg"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="Ray-Ban" class="brand-mark rayban">Ray‑Ban</span><span class="product-brand-name">Ray‑Ban</span></div><span class="category">Ray-Ban</span><h3>Ray-Ban Meta Gen 2</h3><p>Умные очки для контента, общения и повседневного стиля.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label="Открыть карточку Dyson Airstrait" class="product-card" data-category="Dyson" data-description="Выпрямитель Dyson Airstrait для бережного выпрямления и укладки волос потоком воздуха без перегрева пластин." data-title="Dyson Airstrait" href="#modal-dyson-airstrait">
+<div class="product-photo"><img alt="Dyson Airstrait" decoding="async" loading="eager" src="images/19-dyson-airstrait.jpg"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="Dyson" class="brand-mark dyson">Dyson</span><span class="product-brand-name">Dyson</span></div><span class="category">Dyson</span><h3>Dyson Airstrait</h3><p>Выпрямитель Dyson для гладкой укладки и бережного ухода за волосами.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label="Открыть карточку Styler" class="product-card" data-category="Dyson" data-description="Styler для укладки, создания локонов, выпрямления и бережной сушки волос." data-title="Styler" href="#modal-dyson-airwrap-styler">
+<div class="product-photo"><img alt="Styler" decoding="async" loading="eager" src="images/20-styler.jpg"/></div>
+<div class="product-top">
+<div class="product-brand-row"><span aria-label="Dyson" class="brand-mark dyson">D</span><span class="product-brand-name">Dyson</span></div>
+<span class="category">Dyson</span>
+<h3>Styler</h3>
+<p>Styler для укладки, локонов, выпрямления и деликатной сушки волос.</p>
+</div>
+<span class="card-link">Подробнее →</span>
+</a><a aria-label="Открыть карточку Dyson V15" class="product-card" data-category="Dyson" data-description="Беспроводной пылесос Dyson V15 для уборки дома, твёрдых покрытий, ковров, мебели и труднодоступных мест." data-title="Dyson V15" href="#modal-dyson-v15">
+<div class="product-photo"><img alt=" Dyson V15" decoding="async" loading="eager" src="images/21-dyson-v15.png"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="Dyson" class="brand-mark dyson">Dyson</span><span class="product-brand-name">Dyson</span></div><span class="category">Dyson</span><h3>Dyson V15</h3><p>Мощный беспроводной пылесос Dyson для домашней уборки.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label="Открыть карточку PlayStation 5 Slim" class="product-card" data-category="PS5" data-description="Компактная версия PS5 Slim для игр нового поколения, удобного размещения дома и современного игрового опыта." data-title="PlayStation 5 Slim" href="#modal-playstation-5-slim">
+<div class="product-photo"><img alt=" PlayStation 5 Slim" decoding="async" loading="eager" src="images/22-playstation-5-slim.png"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="PlayStation" class="brand-mark ps">PS</span><span class="product-brand-name">PlayStation</span></div><span class="category">PS5</span><h3>PlayStation 5 Slim</h3><p>Более компактная версия консоли Sony PlayStation 5.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label="Открыть карточку PlayStation 5 Pro" class="product-card" data-category="PS5" data-description="Продвинутая версия PS5 Pro для тех, кому важны максимальные игровые возможности и производительность." data-title="PlayStation 5 Pro" href="#modal-playstation-5-pro">
+<div class="product-photo"><img alt=" PlayStation 5 Pro" decoding="async" loading="eager" src="images/23-playstation-5-pro.png"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="PlayStation" class="brand-mark ps">PS</span><span class="product-brand-name">PlayStation</span></div><span class="category">PS5</span><h3>PlayStation 5 Pro</h3><p>Усиленная версия PlayStation для требовательных игроков.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label="Открыть карточку Чехлы" class="product-card" data-category="Аксессуары" data-description="Оригинальные и совместимые чехлы для защиты смартфонов, планшетов и других устройств в ежедневном использовании." data-title="Чехлы" href="#modal-chehly">
+<div class="product-photo"><img alt=" Чехлы" decoding="async" loading="eager" src="images/24-chehly.jpg"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="iPro" class="brand-mark iPro-mini">iPro</span><span class="product-brand-name">iPro</span></div><span class="category">Аксессуары</span><h3>Чехлы</h3><p>Защита и аккуратный внешний вид для вашей техники.</p></div><span class="card-link">Подробнее →</span>
+</a>
+<a aria-label="Открыть карточку Зарядки" class="product-card" data-category="Аксессуары" data-description="Зарядные устройства и кабели для повседневного использования дома, в офисе и в дороге." data-title="Зарядки" href="#modal-zaryadki">
+<div class="product-photo"><img alt=" Зарядки" decoding="async" loading="eager" src="images/25-zaryadki.jpg"/></div>
+<div class="product-top"><div class="product-brand-row"><span aria-label="iPro" class="brand-mark iPro-mini">iPro</span><span class="product-brand-name">iPro</span></div><span class="category">Аксессуары</span><h3>Зарядки</h3><p>Зарядные устройства и кабели для техники каждый день.</p></div><span class="card-link">Подробнее →</span>
+</a>
+</div>
+</section>
+<section class="page">
+<div class="notice">
+<div>
+<h2>Только оригинал</h2>
+<p>
+            В iPro продаётся оригинальная техника и аксессуары с гарантией 1 год.
+            Доставки и рассрочки нет — покупка оформляется только в магазинах.
+          </p>
+</div>
+<a class="btn btn-primary" href="#stores">Связаться</a>
+</div>
+</section>
+<section class="page" id="stores">
+<div class="section-head">
+<div>
+<div class="section-kicker">Где купить</div>
+<h2>Наши магазины</h2>
+</div>
+<p class="section-subtitle">
+          Приходите в удобный магазин в Казани, Нижнекамске или Елабуге. Телефоны и Instagram кликабельны.
+        </p>
+</div>
+<div class="stores-grid">
+<article class="store-card">
+<div class="store-media">
+<img alt="Магазин iPro в Казани" class="store-img" decoding="async" fetchpriority="high" loading="eager" src="images/26-magazin-ipro-v-kazani.jpg"/>
+<div class="img-fallback">Фото магазина Казань временно не загрузилось</div>
+</div>
+<div class="store-body">
+<h3>Казань</h3>
+<p class="store-address">ЖК Свобода, ул. Козина, 9</p>
+<div class="store-links">
+<a href="tel:+79871837777">+7 (987) 183-77-77</a>
+<a href="https://instagram.com/ipro_kazan" rel="noopener" target="_blank">@ipro_kazan</a>
+</div>
+</div>
+</article>
+<article class="store-card">
+<div class="store-media">
+<img alt="Магазин iPro в Нижнекамске" class="store-img" decoding="async" fetchpriority="high" loading="eager" src="images/27-magazin-ipro-v-nizhnekamske.jpg"/>
+<div class="img-fallback">Фото магазина Нижнекамск временно не загрузилось</div>
+</div>
+<div class="store-body">
+<h3>Нижнекамск</h3>
+<p class="store-address">ТЦ «Аврора», пр. Мира, 45А</p>
+<div class="store-links">
+<a href="tel:+79874018881">+7 (987) 401-88-81</a>
+<a href="https://instagram.com/ipro_nizhnekamsk" rel="noopener" target="_blank">@ipro_nizhnekamsk</a>
+</div>
+</div>
+</article>
+<article class="store-card">
+<div class="store-media">
+<img alt="Магазин iPro в Елабуге" class="store-img" decoding="async" fetchpriority="high" loading="eager" src="images/28-magazin-ipro-v-elabuge.jpg"/>
+<div class="img-fallback">Фото магазина Елабуга временно не загрузилось</div>
+</div>
+<div class="store-body">
+<h3>Елабуга</h3>
+<p class="store-address">ТЦ «Эссен», Окружное шоссе, 37А</p>
+<div class="store-links">
+<a href="tel:+79867179895">+7 (986) 717-98-95</a>
+<a href="https://instagram.com/ipro_elabuga" rel="noopener" target="_blank">@ipro_elabuga</a>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class="page" id="reviews">
+<div class="section-head">
+<div>
+<div class="section-kicker">Опыт покупателей</div>
+<h2>Отзывы</h2>
+</div>
+<p class="section-subtitle">
+          Покупатели отмечают оригинальность техники, понятную консультацию и удобное расположение магазинов.
+        </p>
+</div>
+<div class="reviews-grid">
+<article class="review-card">
+<div class="stars">★★★★★</div>
+<p>Быстро помогли выбрать iPhone, всё объяснили по гарантии. Магазин удобно расположен, покупкой доволен.</p>
+<strong>Алексей</strong>
+<span>Казань</span>
+</article>
+<article class="review-card">
+<div class="stars">★★★★★</div>
+<p>Покупала AirPods, проверили на месте, ответили на вопросы. Понравилось, что всё спокойно и без навязывания.</p>
+<strong>Марина</strong>
+<span>Нижнекамск</span>
+</article>
+<article class="review-card">
+<div class="stars">★★★★★</div>
+<p>Брал аксессуары и смотрел MacBook. Консультация понятная, техника оригинальная, магазин рекомендую.</p>
+<strong>Олег</strong>
+<span>Елабуга</span>
+</article>
+<article class="review-card">
+<div class="stars">★★★★★</div>
+<p>Брал PlayStation 5, всё быстро проверили и спокойно объяснили по гарантии. Хороший магазин, без лишней суеты.</p>
+<strong>Илья</strong>
+<span>Казань</span>
+</article>
+<article class="review-card">
+<div class="stars">★★★★★</div>
+<p>Подбирала Apple Watch в подарок. Помогли выбрать модель, рассказали разницу между версиями, покупкой довольна.</p>
+<strong>Рената</strong>
+<span>Нижнекамск</span>
+</article>
+<article class="review-card">
+<div class="stars">★★★★★</div>
+<p>Искал Dyson, уточнил наличие через Instagram и потом забрал в магазине. Всё оригинальное, сервис понравился.</p>
+<strong>Дамир</strong>
+<span>Елабуга</span>
+</article>
+</div>
+</section>
+</main>
+<div aria-modal="true" class="css-modal" id="modal-iphone-17" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">iPhone</span>
+<h3 class="modal-title">iPhone 17</h3>
+<p class="modal-desc">Современный iPhone для повседневных задач, фото, видео, общения и работы. Оригинальная техника с гарантией 1 год.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-iphone-17-pro" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">iPhone</span>
+<h3 class="modal-title">iPhone 17 Pro</h3>
+<p class="modal-desc">Флагманская Pro-модель для тех, кому важны производительность, камера, дисплей и премиальный опыт использования.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-iphone-17-pro-max" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">iPhone</span>
+<h3 class="modal-title">iPhone 17 Pro Max</h3>
+<p class="modal-desc">Максимальная версия iPhone с крупным экраном, высокой автономностью и флагманскими возможностями для фото, видео и игр.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-iphone-17-air" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">iPhone</span>
+<h3 class="modal-title">iPhone 17 Air</h3>
+<p class="modal-desc">Тонкая и лёгкая модель iPhone для тех, кто ценит компактность, стиль и удобство в повседневном использовании.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-iphone-se" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">iPhone</span>
+<h3 class="modal-title">iPhone SE</h3>
+<p class="modal-desc">Компактный iPhone с привычным форматом, быстрым интерфейсом и всеми базовыми возможностями смартфона Apple.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-ipad-pro" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">iPad</span>
+<h3 class="modal-title">iPad Pro</h3>
+<p class="modal-desc">Планшет Apple для профессиональных задач, графики, монтажа, работы с документами, учёбы и развлечений.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-ipad-air" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">iPad</span>
+<h3 class="modal-title">iPad Air</h3>
+<p class="modal-desc">Лёгкий и производительный iPad для учебы, работы, заметок, фильмов, игр и повседневных задач.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-ipad" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">iPad</span>
+<h3 class="modal-title">iPad</h3>
+<p class="modal-desc">Классический iPad для обучения, чтения, видео, браузера, заметок и простых рабочих задач.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-macbook-air-15" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">MacBook</span>
+<h3 class="modal-title">MacBook Air 15"</h3>
+<p class="modal-desc">Тонкий MacBook с большим экраном для работы, учебы, презентаций, браузера, документов и повседневных задач.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-macbook-air-13" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">MacBook</span>
+<h3 class="modal-title">MacBook Air 13"</h3>
+<p class="modal-desc">Компактный и лёгкий MacBook для мобильной работы, учебы, поездок, документов и онлайн-задач.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-macbook-pro-14" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">MacBook</span>
+<h3 class="modal-title">MacBook Pro 14"</h3>
+<p class="modal-desc">Профессиональный MacBook для сложных задач, кода, дизайна, монтажа, многозадачности и долгой работы.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-airpods-pro-2" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">AirPods</span>
+<h3 class="modal-title">AirPods Pro 3</h3>
+<p class="modal-desc">Беспроводные наушники Apple с активным шумоподавлением, удобной посадкой и качественным звуком.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-airpods-4" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">AirPods</span>
+<h3 class="modal-title">AirPods 4</h3>
+<p class="modal-desc">Лёгкие беспроводные наушники Apple для звонков, музыки, видео, прогулок и повседневного использования.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-airpods-max" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">AirPods</span>
+<h3 class="modal-title">AirPods Max</h3>
+<p class="modal-desc">Полноразмерные наушники Apple с премиальными материалами, объёмным звуком и активным шумоподавлением.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-apple-watch-ultra-2" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">Watch</span>
+<h3 class="modal-title">Apple Watch Ultra 3</h3>
+<p class="modal-desc">Прочные часы Apple для спорта, активности, тренировок, путешествий и контроля важных показателей.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-apple-watch-series-10" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">Watch</span>
+<h3 class="modal-title">Apple Watch Series 11</h3>
+<p class="modal-desc">Современные Apple Watch для уведомлений, тренировок, здоровья, повседневных задач и связки с iPhone.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-apple-watch-se" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">Watch</span>
+<h3 class="modal-title">Apple Watch SE 3</h3>
+<p class="modal-desc">Доступная модель Apple Watch SE 3 с удобными функциями для активности, уведомлений, тренировок и повседневного использования.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-ray-ban-meta-gen-2" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">Ray-Ban</span>
+<h3 class="modal-title">Ray-Ban Meta Gen 2</h3>
+<p class="modal-desc">Умные очки Ray-Ban Meta Gen 2 для съёмки, общения, контента и удобного повседневного использования.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-dyson-airstrait" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">Dyson</span>
+<h3 class="modal-title">Dyson Airstrait</h3>
+<p class="modal-desc">Выпрямитель Dyson Airstrait для бережного выпрямления и укладки волос потоком воздуха без перегрева пластин.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-dyson-airwrap-styler" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">Dyson</span>
+<h3 class="modal-title">Styler</h3>
+<p class="modal-desc">Styler для укладки, создания локонов, выпрямления и бережной сушки волос.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div><div aria-modal="true" class="css-modal" id="modal-dyson-v15" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">Dyson</span>
+<h3 class="modal-title">Dyson V15</h3>
+<p class="modal-desc">Беспроводной пылесос Dyson V15 для уборки дома, твёрдых покрытий, ковров, мебели и труднодоступных мест.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-playstation-5-slim" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">PS5</span>
+<h3 class="modal-title">PlayStation 5 Slim</h3>
+<p class="modal-desc">Компактная версия PS5 Slim для игр нового поколения, удобного размещения дома и современного игрового опыта.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-playstation-5-pro" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">PS5</span>
+<h3 class="modal-title">PlayStation 5 Pro</h3>
+<p class="modal-desc">Продвинутая версия PS5 Pro для тех, кому важны максимальные игровые возможности и производительность.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-chehly" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">Аксессуары</span>
+<h3 class="modal-title">Чехлы</h3>
+<p class="modal-desc">Оригинальные и совместимые чехлы для защиты смартфонов, планшетов и других устройств в ежедневном использовании.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<div aria-modal="true" class="css-modal" id="modal-zaryadki" role="dialog">
+<a aria-label="Закрыть" class="css-modal-bg" href="#catalog"></a>
+<div class="modal-box">
+<span class="modal-category">Аксессуары</span>
+<h3 class="modal-title">Зарядки</h3>
+<p class="modal-desc">Зарядные устройства и кабели для повседневного использования дома, в офисе и в дороге.</p>
+<a class="modal-close" href="#catalog">Закрыть</a>
+</div>
+</div>
+<section class="page" id="extra-info">
+<div class="extra-info-wrap">
+<div class="extra-info-grid">
+<div class="extra-main-card">
+<div>
+<h2>Важная информация</h2>
+
+</div>
+<div class="extra-time">
+<div class="extra-time-icon">⌚</div>
+<div>
+<strong>10:00 — 20:00</strong>
+<span>Режим работы магазинов</span>
+</div>
+</div>
+</div>
+<div class="extra-contact-card">
+<div class="extra-contact-title">Связаться с магазином</div>
+<div class="extra-contact-grid">
+<div class="extra-contact-item">
+<strong>Казань</strong>
+<div class="extra-contact-links">
+<a href="tel:+79871837777">+7 (987) 183-77-77</a>
+<a href="https://instagram.com/ipro_kazan" rel="noopener" target="_blank">@ipro_kazan</a>
+</div>
+</div>
+<div class="extra-contact-item">
+<strong>Нижнекамск</strong>
+<div class="extra-contact-links">
+<a href="tel:+79874018881">+7 (987) 401-88-81</a>
+<a href="https://instagram.com/ipro_nizhnekamsk" rel="noopener" target="_blank">@ipro_nizhnekamsk</a>
+</div>
+</div>
+<div class="extra-contact-item">
+<strong>Елабуга</strong>
+<div class="extra-contact-links">
+<a href="tel:+79867179895">+7 (986) 717-98-95</a>
+<a href="https://instagram.com/ipro_elabuga" rel="noopener" target="_blank">@ipro_elabuga</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section aria-label="SEO описание магазина iPro" class="page seo-text">
+<div class="notice">
+<h2>Магазин оригинальной техники в Татарстане</h2>
+<p>iPro — магазин оригинальной техники Apple, Dyson, PlayStation и Ray-Ban в Казани, Нижнекамске и Елабуге. В каталоге представлены iPhone, iPad, MacBook, AirPods, Apple Watch, PlayStation 5, Dyson, Ray-Ban Meta и аксессуары. За полной информацией о наличии можно обратиться по телефону или в Instagram выбранного магазина.</p>
+</div>
+</section>
+<footer class="footer">
+<div class="page">
+<p><b>Сделано с ❤️ в ai pro</b></p>
+<p>Ждём вас в наших магазинах!</p>
+</div>
+</footer>
+<div aria-hidden="true" aria-modal="true" class="photo-lightbox" id="photo-lightbox" role="dialog">
+<button aria-label="Закрыть фото" class="photo-lightbox-bg" data-photo-close="" type="button"></button>
+<img alt="" class="photo-lightbox-img" id="photo-lightbox-img"/>
+<button aria-label="Закрыть фото" class="photo-lightbox-close" data-photo-close="" type="button">×</button>
+</div>
+<script>
+    (function () {
+      var lightbox = document.getElementById('photo-lightbox');
+      var lightboxImg = document.getElementById('photo-lightbox-img');
+
+      if (!lightbox || !lightboxImg) return;
+
+      function openPhoto(img) {
+        if (!img || !img.src) return;
+        lightboxImg.src = img.currentSrc || img.src;
+        lightboxImg.alt = img.alt || 'Фото';
+        lightbox.classList.add('show');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closePhoto() {
+        lightbox.classList.remove('show');
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightboxImg.removeAttribute('src');
+        document.body.style.overflow = '';
+      }
+
+      document.addEventListener('click', function (event) {
+        var closeBtn = event.target.closest('[data-photo-close]');
+        if (closeBtn) {
+          event.preventDefault();
+          closePhoto();
+          return;
+        }
+
+        var img = event.target.closest('.product-photo img, .store-img');
+        if (!img || img.classList.contains('failed')) return;
+
+        event.preventDefault();
+        openPhoto(img);
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && lightbox.classList.contains('show')) {
+          closePhoto();
+        }
+      });
+    })();
+</script>
+</body>
+</html>
